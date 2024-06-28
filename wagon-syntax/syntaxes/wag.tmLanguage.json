@@ -1,0 +1,54 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Weighte Attribute Grammar",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#variable"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.wag",
+				"match": "\\b(if)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.wag",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.wag",
+					"match": "\\\\."
+				}
+			]
+		},
+			"variable" : {
+				"begin": "<",
+				"end": ">",
+				"patterns" : [
+				{
+					"name": "inherited.type.wag",
+					"match": "*"
+				},
+				{
+					"name": "synthesized.type.wag",
+					"match": "&"
+				},
+				{
+					"name": "local.type.wag",
+					"match": "$"
+				}
+			]
+		}
+	
+	},
+	"scopeName": "source.wag"
+}

@@ -1,0 +1,18 @@
+[package]
+name = "test"
+version = "1.0.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[workspace]
+
+[dependencies]
+clap = { version = "4.5.7", features = ["derive", "cargo"] }
+itertools = "0.13.0"
+regex-automata = "0.4.7"
+serde_json = "1.0.117"
+subprocess = "0.2.9"
+wagon-ident = { version = "1.0.0", path = "../wagon-ident" }
+wagon-utils = { version = "1.0.0", path = "../wagon-utils", features = ["error_printing"] }
+wagon-value = { version = "1.0.0", path = "../wagon-value" }

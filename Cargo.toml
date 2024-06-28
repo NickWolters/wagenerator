@@ -7,6 +7,7 @@ members = [ "wagon",
 	"wagon-parser",
 	"wagon-utils",
 	"wagon-value",
+	"wagon-togll"
 ]
 resolver = "2"
 
@@ -42,6 +43,7 @@ wagon-macros = {path = "./wagon-macros", version="=1.0.0"}
 wagon-parser = {path = "./wagon-parser", version="=1.0.0"}
 wagon-utils = {path = "./wagon-utils", version="=1.0.0"}
 wagon-value = {path = "./wagon-value", version="=1.0.0"}
+wagon-togll = {path = "./wagon-togll", version="1.0.0"}
 
 # For tests
 pretty_assertions = "1.4.0"
