@@ -11,6 +11,7 @@ import org.antlr.v4.runtime.tree.TerminalNode;
  */
 @SuppressWarnings("CheckReturnValue")
 public class wagBaseListener implements wagListener {
+
 	/**
 	 * {@inheritDoc}
 	 *

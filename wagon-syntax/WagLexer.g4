@@ -1,46 +1,48 @@
 lexer grammar WagLexer;
 
 // LEXER GRAMMAR
-//META-DATA
-METADELIM          : '='*;
-INCLUDEDECL        : '::';
+ INCLUDEDECL        : '::';
+ PROPESITION_SIGN   : '->';
+ IDENTIFIER         : [a-zA-Z][a-zA-Z0-9_]*;
 
-IDENTIFIER         : [a-zA-Z][a-zA-Z-2-9_];
-ATTRSPEC           : '$' | '*' | '&';
+ TERMOP             : '*' | '//' | '/' | '%';
+ ATTRSPEC           : '$' | '*' | '&';
+ SUMOP              : '+' | '-';
+ FACTORIAL          : '**';
+ EBNFTYPE           : '@' | '~' | '?';
+ EBNF_OPTION        : '|';
+ BOOL               : 'true' | 'false';
+ NUM                : [0-9];
+ FLOAT              : [0-9]*'.'[0-9]*;
+ STRING             : '"' ~('\r' | '\n' | '"')* '"'
+                    | '\'' ~('\r' | '\n' | '"')* '\'';
 
-BOOL               : 'true' | 'false';
-NUM                : [0-9]*;
-FLOAT              : [0-9]*'.'[0-9]*;
-STRING             : '"' [^']* '"'
-                   |  '\'' [^']* '\'';
+ SUBPROC            : '$( /[^)]*/ )';
+ DECLARATION        : ':';
+ STATEMENT_END      : ';';
+ EQ                 : '=';
+ META_END           : '****';
+ INVERSE_SIGN       : '!';
 
-EBNFTYPE           : '+' | '*' | '?';
-EBNF_OPTION        : '|';
+ BRACKET_L          : '[';
+ BRACKET_R          : ']';
+ ATTR_ASSIGN_L      : '{';
+ ATTR_ASSIGN_R      : '}';
+ LPAREN             : '(';
+ RPAREN             : ')';
+ LEFT_ANGLE_BRACKET : '<';
+ RIGHT_ANGLE_BRACKET: '>';
 
-TERMINAL           : '/' [^/] '/'; // Regex
-SUBPROC            : '$( /[^)]*/ )';
+ DELIMITER          : ',';
+ IF                 : 'if';
+ ELSE               : 'else';
+ THEN               : 'then';
+ AND                : '&&';
+ OR                 : '||';
 
-DECLARATION        : ':';
-STATEMENT_END      : ';';
-ASSIGN_VALUE       : '=';
-INVERSE_SIGN       : '!';
-BRACKET_L          : '[';
-BRACKET_R          : ']';
-ATTR_DECL_L        : '<';
-ATTR_DECL_R        : '>';
-ATTR_ASSIGN_L      : '{';
-ATTR_ASSIGN_R      : '}';
-LPAREN             : '(';
-RPAREN             : ')';
-DELIMITER          : ',';
+ LEQ                : '<=';
+ GEQ                : '>=';
+ EQ2                : '==';
+ NEQ                : '!=';
+ IN                 : 'in';
 
-IF                 : 'if';
-ELSE               : 'else';
-THEN               : 'then';
-AND                : '&&';
-OR                 : '||';
-
-SUMOP              : '+' | '-';
-FACTORIAL          : '**';
-TERMOP             : '*' | '//' | '/' | '%';
-COMPOP             : '<' | '<=' | '>' | '>=' | '==' | '!=' | 'in';

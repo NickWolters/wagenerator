@@ -9,15 +9,27 @@
 			"include": "#strings"
 		},
 		{
-			"include": "#variable"
+			"include": "#variables"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#relations"
 		}
 	],
 	"repository": {
 		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.wag",
-				"match": "\\b(if)\\b"
-			}]
+			"patterns": [
+				{
+					"name": "keyword.control.compare",
+					"match": "\\b(if|else|then|in)\\b"
+				},
+				{
+					"name": "keyword.control.bool",
+					"match": "true|false"
+				}
+			]
 		},
 		"strings": {
 			"name": "string.quoted.double.wag",
@@ -30,21 +42,29 @@
 				}
 			]
 		},
-			"variable" : {
-				"begin": "<",
-				"end": ">",
-				"patterns" : [
+		"variables" : {
+			"patterns" : [
 				{
-					"name": "inherited.type.wag",
-					"match": "*"
-				},
+					"name": "entity.language.attirbutes",
+					"match": "[&$*][a-zA-Z_]*"
+				}
+			]
+		},
+		"comments": {
+			"begin": "/\\*",
+			"end": "\\*/",
+			"patterns" : [
 				{
-					"name": "synthesized.type.wag",
-					"match": "&"
-				},
+					"name": "comment.multiline",
+					"match": "[a-zA-z0-9]"
+				}
+			]
+		},
+		"relations": {
+			"patterns": [
 				{
-					"name": "local.type.wag",
-					"match": "$"
+					"name" : "keyword.relation.arrow",
+					"match": "->"
 				}
 			]
 		}

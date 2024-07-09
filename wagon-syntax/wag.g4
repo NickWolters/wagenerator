@@ -107,16 +107,7 @@ dictonary :  BRACKET_L expression BRACKET_R;
 
 compop             : LEFT_ANGLE_BRACKET | LEQ | RIGHT_ANGLE_BRACKET | GEQ | EQ2 | NEQ | IN;
 
-
-// PARSER TOKENS.
-
-// COMMENT_START : '/*';
-
-// COMMENT_CONTENT : [a-zA-Z0-9]*;
-
-//COMMENT_END : '*/';
-
-//COMMENT_LINE : '//' ;
+// Lexer
 
 INCLUDEDECL        : '::';
 
@@ -135,7 +126,7 @@ EBNFTYPE           : '@' | '~' | '?';
 BOOL               : 'true' | 'false';
 
 NUM                : [0-9];
-
+wa
 FLOAT              : [0-9]*'.'[0-9]*;
 
 STRING             : '"' ~('\r' | '\n' | '"')* '"'
